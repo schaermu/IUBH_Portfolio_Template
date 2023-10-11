@@ -1,0 +1,24 @@
+{
+    "editor.wordWrap": "on",
+    "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out.nosync",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-synctex=1",
+                "-shell-escape",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-auxdir=%OUTDIR%",
+                "-outdir=%OUTDIR%",
+                "-e",
+                "$bibtex_fudge=1",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    ],
+    "ltex.language": "de-CH",
+}

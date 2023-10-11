@@ -1,0 +1,64 @@
+% LTeX: enabled=false
+\documentclass[11pt,paper=a4,parskip=half,listof=nochaptergap]{scrreport}
+\KOMAoption{footnotes}{multiple}
+
+\usepackage[margin=2cm,includefoot,heightrounded]{geometry}
+\usepackage{hyphenat}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[main=ngerman,english]{babel}
+\useshorthands{~}
+\defineshorthand{~-}{\hyp{}}
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+\setotherlanguages{english}
+\usepackage[T1]{fontenc}
+\usepackage[final]{microtype}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\newfontfamily{\defaultfont}{Arial}
+\usepackage{dirtytalk}
+\usepackage{url}
+\urlstyle{same}
+\usepackage{graphicx}
+\graphicspath{ {../images/} }
+\usepackage[babel,german=guillemets]{csquotes}
+\usepackage[
+    backend=biber,
+    style=apa,
+    natbib=true,
+    defernumbers=true
+]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{scrhack}
+\usepackage{chngcntr}
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\pgfplotsset{
+    legend image with text/.style={
+            legend image code/.code={%
+                    \node[anchor=center] at (0.3cm,0cm) {#1};
+                }
+        },
+}
+\usepackage{enumitem}
+\usepackage{minted}
+
+\makeatletter
+\emergencystretch=1em
+
+\addtokomafont{disposition}{\defaultfont}
+\addtokomafont{descriptionlabel}{\defaultfont}
+\addtokomafont{chapter}{\fontsize{12}{14}\selectfont}
+\addtokomafont{section}{\fontsize{12}{14}\selectfont}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
+\renewcommand*{\chapterheadendvskip}{\vspace*{0.5cm}}
+
+\counterwithout{footnote}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}

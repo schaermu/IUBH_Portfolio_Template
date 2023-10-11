@@ -1,0 +1,7 @@
+*.gz
+*.log
+*.aux
+*.toc
+out.nosync/
+*.Identifier
+_minted-*
